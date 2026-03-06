@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>MedChart Vitals Visualizer</title>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<p style="color:gray">
+Real-time patient vital monitoring and anomaly detection dashboard
+</p>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+    
+
+body{
+font-family: Arial;
+margin:0;
+background:#f4f6fb;
+text-align:center;
+}
+
+header{
+background:#2c3e50;
+color:white;
+padding:20px;
+font-size:24px;
+}
+
+.container{
+padding:20px;
+}
+
+.box{
+background:white;
+padding:20px;
+margin:20px auto;
+border-radius:10px;
+max-width:800px;
+box-shadow:0px 3px 8px rgba(0,0,0,0.1);
+}
+
+canvas{
+width:100% !important;
+max-width:700px;
+margin:auto;
+}
+
+.alerts li{
+color:red;
+font-weight:bold;
+}
+
+.status{
+font-size:20px;
+font-weight:bold;
+margin-top:10px;
+}
+
+.risk{
+font-size:22px;
+font-weight:bold;
+margin-top:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+MedChart Vitals Visualizer
+</header>
+
+<div class="container">
+
+<div class="box">
+
+<h3>Upload Patient CSV File</h3>
+
+<input type="file" id="csvFile">
+
+<p style="color:gray;">
+CSV format: timestamp,heart_rate,systolic_bp,temperature
+</p>
+
+</div>
+
+<div class="box">
+
+<h2>Heart Rate</h2>
+
+<canvas id="heartChart"></canvas>
+
+</div>
+
+<div class="box">
+
+<h2>Blood Pressure</h2>
+
+<canvas id="bpChart"></canvas>
+
+</div>
+
+<div class="box">
+
+<h2>Temperature</h2>
+
+<canvas id="tempChart"></canvas>
+
+</div>
+
+<div class="box">
+
+<h2>Patient Status</h2>
+
+<div id="status" class="status">
+Waiting for data...
+</div>
+
+</div>
+
+<div class="box">
+
+<h2>AI Risk Prediction</h2>
+
+<div id="riskScore" class="risk">
+Analyzing patient risk...
+</div>
+
+</div>
+
+<div class="box">
+
+<h2>Critical Alerts</h2>
+
+<ul id="alerts" class="alerts"></ul>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
