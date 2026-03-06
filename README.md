@@ -13,4 +13,6 @@ Features
 How to Run
 1. Open index.html
 2. Upload CSV file
+
 3. View charts and alerts
+4. Project deployed using GitHub Pages
